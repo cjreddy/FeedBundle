@@ -86,10 +86,11 @@ class Formatter
 
         } else {
             if ($format = $field->get('date_format')) {
-                $value = $value->format($format);
+                if($value instanceof \DateTime)
+                    $value = $value->format($format);
             }
 
-            $element = $this->dom->createElement($name, $value);
+            $element = $this->dom->createElement($name, htmlentities($value));
         }
 
         return $element;

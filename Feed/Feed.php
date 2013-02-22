@@ -104,14 +104,14 @@ class Feed
      */
     public function add($item)
     {
-        if (!$item instanceof ItemInterface && !$item instanceof RoutedItemInterface) {
+        /*if (!$item instanceof ItemInterface && !$item instanceof RoutedItemInterface) {
             throw new \InvalidArgumentException('Item must implement ItemInterface or RoutedItemInterface');
         }
 
         if ($item instanceof RoutedItemInterface) {
             $item = new ProxyItem($item, $this->router);
         }
-
+*/
         $this->items[] = $item;
 
         return $this;
